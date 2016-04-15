@@ -5,7 +5,7 @@ Install RTAI on Ubuntu 14.04.4
 
 **It is recommended to run this on a VM**
 
-Download and install [Ubuntu 14.04.4](http://releases.ubuntu.com/14.04/).
+Download and install [Ubuntu 14.04.4](http://releases.ubuntu.com/14.04/) **64-bit!**.
 
 Download this script:
 ```
