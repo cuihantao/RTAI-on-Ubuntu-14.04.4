@@ -20,6 +20,7 @@ fi
 echo "RTAI on Unbuntu 14.04.4 Installer Copyright (C) 2016 Tristan van Vaalen"
 echo "This program comes with ABSOLUTELY NO WARRANTY; for details see license file."
 echo "This is free software, and you are welcome to redistribute it under certain conditions; see license file."
+echo "Running on dirty system is NOT tested!"
 read -rsp $'Press any key to start...\n' -n 1 key
 
 # We are installing this next to the other kernel sources
@@ -43,11 +44,11 @@ ln -s rtai-4.1 rtai
 
 # Make sure we have all the packages
 echo "Updating package list..."
-apt-get -qq update > /dev/null
+apt-get -qq --force-yes update > /dev/null
 echo "Installing Linux build packages (if needed)..."
-apt-get -qq install --yes cvs subversion build-essential git-core g++-multilib gcc-multilib > /dev/null
+apt-get -qq --force-yes install cvs subversion build-essential git-core g++-multilib gcc-multilib > /dev/null
 echo "Installing RTAI build packages (if needed)..."
-apt-get -qq install --yes libtool automake libncurses5-dev kernel-package > /dev/null
+apt-get -qq --force-yes install libtool automake libncurses5-dev kernel-package > /dev/null
 
 # Copy the standard config
 echo "Copying standard config..."
@@ -64,6 +65,7 @@ patch -s -p1 < /usr/src/rtai/base/arch/x86/patches/hal-linux-3.10.32-x86-5.patch
 echo "===============MENUCONFIG==============="
 echo "----> Your input is needed! <----"
 echo "Write these instruction down somehwere!"
+echo " (or find them in the readme)"
 echo ""
 echo "Please configure the following settings:"
 echo ""
