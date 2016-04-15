@@ -1,6 +1,8 @@
 # RTAI-on-Ubuntu-14.04.4
 Install RTAI on Ubuntu 14.04.4
 
+This has been tested on a clean Ubuntu 14.04.4 image on VMware Workstation 12.0.
+
 ## Getting started
 
 **It is recommended to run this on a VM**
