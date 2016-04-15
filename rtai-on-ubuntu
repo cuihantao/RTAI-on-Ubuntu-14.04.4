@@ -43,11 +43,11 @@ ln -s rtai-4.1 rtai
 
 # Make sure we have all the packages
 echo "Updating package list..."
-apt-get -qq update
+apt-get -qq update > /dev/null
 echo "Installing Linux build packages (if needed)..."
-apt-get -qq install --yes cvs subversion build-essential git-core g++-multilib gcc-multilib
+apt-get -qq install --yes cvs subversion build-essential git-core g++-multilib gcc-multilib > /dev/null
 echo "Installing RTAI build packages (if needed)..."
-apt-get -qq install --yes libtool automake libncurses5-dev kernel-package
+apt-get -qq install --yes libtool automake libncurses5-dev kernel-package > /dev/null
 
 # Copy the standard config
 echo "Copying standard config..."
