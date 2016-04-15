@@ -103,20 +103,20 @@ echo "Installing linux headers..."
 dpkg -i ../linux-headers-3.10.32-rtai_3.10.32-rtai-1_amd64.deb > /dev/null
 
 # Patch grub to start our kernel next time
-GRUB_DEFAULT="saved"
-GRUB_TIMEOUT="2"
-GRUB_HIDDEN_TIMEOUT="10" # make sure grub menu shows
-GRUB_HIDDEN_TIMEOUT_QUIET="false"
-GRUB_CMDLINE_LINUX_DEFAULT="quiet splash lapic=notscdeadline panic=5"
-grub-set-default "Ubuntu, with Linux 4.2.0-27-generic"
-grub-reboot "Ubuntu, with Linux 3.10.32-rtai"
-update-grub > /dev/null
+sed -i.bak 's/^\(GRUB_DEFAULT=\).*/\1"saved"/' /etc/default/grub
+sed -i.bak 's/^\(GRUB_TIMEOUT=\).*/\12/' /etc/default/grub
+sed -i.bak 's/^\(GRUB_HIDDEN_TIMEOUT=\).*/\110/' /etc/default/grub
+sed -i.bak 's/^\(GRUB_HIDDEN_TIMEOUT_QUIET=\).*/\1"false"/' /etc/default/grub
+sed -i.bak 's/^\(GRUB_CMDLINE_LINUX_DEFAULT=\).*/\1"quiet splash lapic=notscdeadline panic=5"/' /etc/default/grub
+grub-set-default "Advanced options for Ubuntu>Ubuntu, with Linux 4.2.0-27-generic"
+grub-reboot "Advanced options for Ubuntu>Ubuntu, with Linux 3.10.32-rtai"
+update-grub
 
 echo "=========Installation complete!========="
 echo "The system will reboot to the RTAI kernel now!"
 echo "========================================"
 
 echo -n "Rebooting in "
-for i in {30..1}; do echo -n "$i " && sleep 1; done
+for i in {5..1}; do echo -n "$i " && sleep 1; done
 
 reboot
