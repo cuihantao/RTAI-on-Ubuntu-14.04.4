@@ -34,7 +34,8 @@ echo " * RTAI on Unbuntu 14.04.4 Installer Copyright (C) 2016 Tristan van Vaalen
 echo " * This program comes with ABSOLUTELY NO WARRANTY; for details see license file."
 echo " * This is free software, and you are welcome to redistribute it under certain conditions; see license file."
 echo " * Running on dirty system is NOT tested! Refer to the readme for more information!"
-read -rsp $'Press any key to start...\n' -n 1 key
+echo ""
+read -rsp $' --> Press any key to start installation...\n' -n 1 key
 
 if [[ $(uname -r) = 3.10.32-rtai ]]; then
     echo "We are on RTAI kernel!"
@@ -92,7 +93,7 @@ else
     apt-get -qq --force-yes install cvs subversion build-essential git-core g++-multilib gcc-multilib > /dev/null
     echo "Installing RTAI build packages (if needed)..."
     apt-get -qq --force-yes install libtool automake libncurses5-dev kernel-package > /dev/null
-    echo "Installing RTLAB packages (if needed)..."
+    echo "Installing RTAILAB packages (if needed)..."
     apt-get -qq --force-yes install libqt4-dev libqwt5-qt4-dev > /dev/null
     
     # Copy the standard config
