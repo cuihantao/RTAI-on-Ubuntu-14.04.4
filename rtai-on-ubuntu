@@ -98,9 +98,9 @@ make -j `getconf _NPROCESSORS_ONLN` deb-pkg LOCALVERSION=-rtai
 
 # Installing kernel
 echo "Installing linux image..."
-dpkg -i linux-image-3.10.32-rtai_3.10.32-rtai-1_amd64.deb > /dev/null
+dpkg -i ../linux-image-3.10.32-rtai_3.10.32-rtai-1_amd64.deb > /dev/null
 echo "Installing linux headers..."
-dpkg -i linux-headers-3.10.32-rtai_3.10.32-rtai-1_amd64.deb > /dev/null
+dpkg -i ../linux-headers-3.10.32-rtai_3.10.32-rtai-1_amd64.deb > /dev/null
 
 # Patch grub to start our kernel next time
 GRUB_DEFAULT="saved"
