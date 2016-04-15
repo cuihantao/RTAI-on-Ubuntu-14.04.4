@@ -43,11 +43,11 @@ chmod +x rtai-on-ubuntu
 **While running, you will be prompted to configure the kernel. Please configure as follows:**
 ```
 Processor type and features
-    -> Processor family = Select yours
-    -> Maximum number of CPUs (NR_CPUS) = Set your number (it's generally "4")
-    -> SMT (Hyperthreading) scheduler support = DISABLE IT
+    -> Processor family: select your architecture (probably default x86)
+    -> Maximum number of CPUs (NR_CPUS): enter your cores (it's generally "4")
+    -> SMT (Hyperthreading) scheduler support = no
 Power Management and ACPI options
-    CPU idle PM support = DISABLE IT
+    CPU idle PM support = no (if possible)
 ```
 
 Run as root:
