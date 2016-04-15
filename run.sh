@@ -45,9 +45,9 @@ patch -p1 < /usr/src/rtai/base/arch/x86/patches/hal-linux-3.10.32-x86-5.patch
 # Create the config file:
 echo "===============MENUCONFIG==============="
 echo "----> Your input is needed! <----"
-echo "Write these instruction down somehwere!
+echo "Write these instruction down somehwere!"
 echo ""
-echo "Please configure the following settings:
+echo "Please configure the following settings:"
 echo ""
 echo "Processor type and features"
 echo "    -> Processor family = Select yours"
