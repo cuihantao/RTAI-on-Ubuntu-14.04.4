@@ -36,3 +36,8 @@ Notes:
  * The build process can take a long time (1 hour?)
  * You will be prompted before building
  * Your machine will reboot to the RTAI kernel after installation
+
+## Quick start:
+```
+curl -O https://raw.githubusercontent.com/Scoudem/RTAI-on-Ubuntu-14.04.4/master/rtai-on-ubuntu; chmod +x rtai-on-ubuntu; sudo ./rtai-on-ubuntu
+```
