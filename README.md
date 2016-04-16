@@ -60,6 +60,28 @@ Notes:
  * You will be prompted before building
  * Your machine will reboot to the RTAI kernel after installation
 
+After reboot run the script again:
+```
+sudo ./rtai-on-ubuntu
+```
+
+You will be prompted to configure RTAI. **Make sure you set your NUM_CPUS to the correct amount!**. RTAI should be configured properly now. You can do a test run by executing the following:
+```
+cd /usr/realtime/testsuite/kern/latency/; sudo ./run
+```
+
+## Troubleshoot
+If you get any error like:
+```
+insmod: ERROR {somemodule.ko} Operation not permitted
+```
+check your logs by using:
+```
+dmesg
+```
+
+This error is probably caused by `RTAI CONFIGURED WITH LESS THAN NUM ONLINE CPUS` (ignore all missing symbol errors, since your modules won't load, no symbols can be found). Please run the install script again and configure the right amount of CPUs. If not: you should probably configure something else.
+
 ## Quick start:
 ```
 curl -O https://raw.githubusercontent.com/Scoudem/RTAI-on-Ubuntu-14.04.4/master/rtai-on-ubuntu; chmod +x rtai-on-ubuntu; sudo ./rtai-on-ubuntu
