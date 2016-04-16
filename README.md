@@ -66,7 +66,8 @@ sudo ./rtai-on-ubuntu
 
 Notes:
  * The build process can take a long time (1 hour?)
- * You will be prompted before building
+ * You will be prompted to configure **before** building
+ * You don't have to interact while building, so make yourself some coffee
  * Your machine will reboot to the RTAI kernel after installation
 
 After reboot run the script again:
