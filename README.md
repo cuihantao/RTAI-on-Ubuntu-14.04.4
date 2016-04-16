@@ -50,6 +50,15 @@ Power Management and ACPI options
     CPU idle PM support = no (if possible)
 ```
 
+If you can't disable CPU idle PM support, configure the following:
+```
+Power Management and ACPI options
+    -> Cpu idle Driver for Intel Processors = no
+    -> ACPI (Advanced Configuration and Power Interface) Support -> PROCESSOR = no
+    -> APM (Advanced Power Management) BIOS support = no
+    -> CPU Frequency scaling -> CPU Frequency scaling = no (optional?)
+```
+
 Run as root:
 ```
 sudo ./rtai-on-ubuntu
