@@ -42,6 +42,8 @@ chmod +x rtai-on-ubuntu
 
 **While running, you will be prompted to configure the kernel. Please configure as follows:**
 ```
+Enable loadable module support
+    -> Module signature verification = no
 Processor type and features
     -> Processor family: select your architecture (probably default x86)
     -> Maximum number of CPUs (NR_CPUS): enter your cores (it's generally "4")
