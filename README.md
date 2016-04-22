@@ -61,9 +61,9 @@ Power Management and ACPI options
     -> CPU Frequency scaling -> CPU Frequency scaling = no (optional?)
 ```
 
-Run as root:
+Run as root (and log output to file):
 ```
-sudo ./rtai-on-ubuntu
+sudo ./rtai-on-ubuntu | tee output.txt
 ```
 
 Notes:
@@ -96,7 +96,7 @@ This error is probably caused by `RTAI CONFIGURED WITH LESS THAN NUM ONLINE CPUS
 
 ## Quick start:
 ```
-curl -O https://raw.githubusercontent.com/Scoudem/RTAI-on-Ubuntu-14.04.4/master/rtai-on-ubuntu; chmod +x rtai-on-ubuntu; sudo ./rtai-on-ubuntu
+curl -O https://raw.githubusercontent.com/Scoudem/RTAI-on-Ubuntu-14.04.4/master/rtai-on-ubuntu; chmod +x rtai-on-ubuntu; sudo ./rtai-on-ubuntu | tee output.txt
 ```
 
 ## Improvements
