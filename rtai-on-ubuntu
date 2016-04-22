@@ -107,11 +107,6 @@ else
     echo "Patching kernel with RTAI..."
     patch -s -p1 < /usr/src/rtai/base/arch/x86/patches/hal-linux-3.10.32-x86-5.patch
     
-    # Get an existing WORKING config
-    echo "Copy old config file..."
-    files=(/boot/config-*)
-    cp "${files[0]}" .config # just take the first we see
-    
     # Create the config file:
     echo "===============MENUCONFIG==============="
     echo "----> Your input is needed! <----"
